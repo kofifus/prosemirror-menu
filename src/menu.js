@@ -45,7 +45,7 @@ class MenuItem {
     if (spec.css) dom.style.cssText += spec.css
     if (!disabled) dom.addEventListener(spec.execEvent || "mousedown", e => {
       e.preventDefault()
-      spec.run(view.state, view.dispatch, view)
+      spec.run(view.state, view.dispatch, view, e)
     })
     return dom
   }
